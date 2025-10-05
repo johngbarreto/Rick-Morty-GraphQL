@@ -1,0 +1,16 @@
+query SearchLocations($page: Int, $name: String) {
+  locations(page: $page, filter: { name: $name }) {
+    info {
+      count
+      pages
+      next
+      prev
+    }
+    results {
+      id
+      name
+      type
+      dimension
+    }
+  }
+}

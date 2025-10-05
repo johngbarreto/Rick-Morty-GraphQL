@@ -1,0 +1,32 @@
+{
+  "schemaNamespace": "RMServerAPI",
+  "input": {
+    "operationSearchPaths": [
+      "OGRickandMortyQL/graphql/**/*.graphql"
+    ],
+    "schemaSearchPaths": [
+      "OGRickandMortyQL/graphql/**/*.graphqls"
+    ]
+  },
+  "output": {
+    "testMocks": { "none": {} },
+    "schemaTypes": {
+      "path": "./RMServerAPI",
+      "moduleType": { "swiftPackageManager": {} }
+    },
+    "operations": { "inSchemaModule": {} }
+  },
+  "schemaDownloadConfiguration": {
+    "downloadMethod": {
+      "introspection": {
+        "endpointURL": "https://rickandmortyapi.com/graphql",
+        "httpMethod": { "POST": {} },
+        "includeDeprecatedInputValues": false,
+        "outputFormat": "SDL"
+      }
+    },
+    "downloadTimeout": 60,
+    "headers": [],
+    "outputPath": "OGRickandMortyQL/graphql/schema.graphqls"
+  }
+}
