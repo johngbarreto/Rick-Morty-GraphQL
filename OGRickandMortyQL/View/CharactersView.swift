@@ -10,12 +10,7 @@ import RMServerAPI
 
 
 struct CharactersView: View {
-    // ───── PICK ONE ─────
-    // 1) Use Combine version:
-    // @StateObject private var viewModel = CharactersViewModelCombine()
-    // 2) Use async/await version:
-    @StateObject private var viewModel = CharactersViewModelAsync()
-    // ─────────────────────
+     @StateObject private var viewModel = CharactersViewModelCombine()
 
     var body: some View {
         NavigationStack {
@@ -55,20 +50,6 @@ struct CharactersView: View {
             // Use a searchable bound to viewModel.searchText in both cases
             .searchable(text: $viewModel.searchText,
                         placement: .navigationBarDrawer(displayMode: .always))
-            // IMPORTANT:
-            // - If you're using CharactersViewModelCombine -> DO NOT call fetch on change here (the VM pipeline handles it).
-            // - If you're using CharactersViewModelAsync -> you should call the debounced search() on change.
-            //
-            // So **uncomment exactly one** of the blocks below depending on which VM you enabled above.
-
-            // ----- For Combine VM: do NOTHING extra here. The VM setupSearchPipeline() handles debounced fetching.
-            // .onChange(of: viewModel.searchText) { _, _ in /* no-op for Combine VM */ }
-
-            // ----- For Async VM: call debounced search in the VM
-            .onChange(of: viewModel.searchText) { _, newValue in
-                // If using Combine VM, comment this line out.
-                viewModel.search(newValue)
-            }
 
             .onAppear {
                 if !viewModel.isLoaded {
