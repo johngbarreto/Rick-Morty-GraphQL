@@ -1,14 +1,16 @@
 # Rick-Morty-GraphQL
 
-This app is a small, focused portfolio app built in SwiftUI that explores different ways to handle asynchronous data and app architecture while integrating a real GraphQL API. 
+This app is a small, focused portfolio app built in SwiftUI.
 
 The app lists characters and locations, infinite scroll pagination. 
-Favorites and user data are planned to be stored in Core Data.
+Favorites and user data are planned to be stored in Core Data + Episodes screens 
 
-What I learned to apply:
+What I focused on learning and using:
 
 - GraphQL with Apollo as a SPM.
-- Combine for event streams, searching with debounce and publishers that are cancellation aware.
-- Concurrency since I wanted to learn a bit more on how to use this pattern, which I thought it was a nice pair with GraphQL.
+- Combine with SwiftUI using search with debounce and all the goodies.
 
-The main focus of this app was to simply learn and try things I haven't had the opportunity to do before, so it was worth while.   
+
+<img width="800" height="600" alt="Shot" src="https://github.com/user-attachments/assets/3b467386-b737-479e-a251-1608f4e1cfbe" />
+
+The main focus of this app was to partice the implementation of Combine and GrahpQL. 
