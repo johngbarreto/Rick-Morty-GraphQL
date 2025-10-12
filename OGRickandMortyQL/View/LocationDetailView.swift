@@ -24,7 +24,6 @@ struct LocationDetailView: View {
 
             if let status = location.type {
                 Text("Status: \(status)")
-                    .foregroundColor(status == "Alive" ? .green : .red)
             }
 
             Spacer()

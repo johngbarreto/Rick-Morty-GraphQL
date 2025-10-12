@@ -11,11 +11,11 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            Tab("Received", systemImage: "tray.and.arrow.down.fill") {
+            Tab("Characters", systemImage: "person.crop.circle.fill") {
                 CharactersView()
             }
 
-            Tab("Account", systemImage: "person.crop.circle.fill") {
+            Tab("Locations", systemImage: "atom") {
                 PlanetsView()
             }
         }
